@@ -2,4 +2,4 @@ LV_WS1112.pdf: LV_WS1112.tex tbl-llmvortragsliste.tex tbl-slvortragsliste.tex tb
 	xelatex LV_WS1112.tex
 
 clean:
-	rm *.log *.aux
+	rm -f *.log *.aux *.out *.toc
