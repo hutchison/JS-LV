@@ -1,0 +1,1640 @@
+\documentclass[%
+a4paper, %apaper,   % alle weiteren Papierformat einstellbar
+%empty,             % keine Seitenzahlen
+11pt,               % Schriftgröße (12pt, 11pt (Standard))
+leqno,              % Nummerierung von Gleichungen links
+fleqn,              % Ausgabe von Gleichungen linksbündig
+%smallheadings,
+%abstracton,
+]
+{scrartcl}
+%{memoir}
+
+%% Deutsche Anpassungen
+\usepackage[ngerman]{babel}
+
+\usepackage{xltxtra, fontspec, xunicode}
+
+\newcommand{\headerfont}{Gill Sans Std}
+
+% TODO: Die Schrift auf eine ändern, die man auch auf dem System findet.
+%\setmainfont[Mapping=tex-text]{Palatino LT Std}
+\setmainfont[Mapping=tex-text]{Minion Pro}
+\setkomafont{sectioning}{\fontspec{\headerfont}}
+\setkomafont{section}{\LARGE}
+\setkomafont{subsection}{\Large}
+\setkomafont{subsubsection}{\large}
+\setkomafont{title}{\fontspec{\headerfont}}
+%\linespread{1.05}
+
+%obligatorischer Mathekram:
+\usepackage{amssymb,amstext}
+%\usepackage{stmaryrd}
+\usepackage[sumlimits]{amsmath}
+%\usepackage{eulervm}
+%\usepackage{mnsymbol}
+
+%nützliche Extras:
+\usepackage{array,
+  %hhline,
+  tabularx,
+  %enumerate,
+  %color,
+  %setspace,
+  %booktabs,
+  %cite,
+  %caption,
+  %lineno,
+  %lastpage,
+  %algorithm,
+  %algorithmic,
+  %listings,
+  %bussproofs,
+  %ulem,
+  %multirow,
+  %natbib,
+  %url,
+  verse,
+  ltxtable,
+}
+\usepackage[
+  xetex,
+  colorlinks=false,
+  linkbordercolor={0 0.5 1},
+  %linkcolor=blue,
+  %pdfnewwindow=true
+]
+{hyperref}
+
+\usepackage[
+  cm,
+  %headings
+]{fullpage}
+%\usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}
+
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\fancyhf{}
+
+%%\fancyhead[C]{Lehrveranstaltungskatalog für das Juniorstudium der Universität Rostock}
+%%\fancyhead[C]{}
+%%\fancyhead[R]{}
+
+%% \fancyfoot[L]{}
+%\fancyfoot[C]{\thepage}
+%% \fancyfoot[R]{\thepage / \pageref{LastPage}}
+
+%%% Linie oben/unten
+%\renewcommand{\headrulewidth}{0.0pt}
+%\renewcommand{\footnoterule}{}
+
+\parindent 0pt
+
+%% Pakete für Grafiken & Abbildungen
+%\usepackage{graphicx}
+%\usepackage{tikz}      %%TeX ist kein Zeichenprogramm
+%\usetikzlibrary{calc,arrows}
+
+%% Lochmarken; auskommentieren, falls unerwünscht
+%\usepackage{eso-pic}
+%\AddToShipoutPicture*{
+%    \put(0,68.5mm){\rule{15pt}{0.5pt}}
+%    \put(0,0.5\paperheight){\rule{20pt}{0.5pt}}
+%    \put(0,228.5mm){\rule{15pt}{0.5pt}}
+%}
+
+%\usepackage{pdflscape}
+
+\newcommand{\code}[1]{{\fontspec[Mapping=tex-text]{Bitstream Vera Sans Mono}\footnotesize#1}}
+\newcommand{\tinycode}[1]{{\fontspec[Mapping=tex-text]{Bitstream Vera Sans Mono}\tiny#1}}
+
+\newcommand{\attrib}[1]{\nopagebreak{\raggedleft\small #1\par}}
+
+\title{Lehrveranstaltungskatalog für das Juniorstudium der Universität Rostock}
+\author{\today}
+\date{}
+
+\renewcommand{\thesection}{\space}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{subsection}.\arabic{subsubsection}}
+\setcounter{tocdepth}{2}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  \begin{description}
+    \item[Wichtig:] Die Teilnahme an den Vorlesungen hat keinerlei Einfluss auf
+      das Zulassungsverfahren für NC-beschränkte Studienfächer an der
+      Universität Rostock!
+  \end{description}
+\end{abstract}
+
+\tableofcontents
+
+\begin{quote}
+  \begin{description}
+    \item[Vorbemerkung:] SWS steht für \textit{Semesterwochenstunde}. Eine SWS
+      entspricht 45 Minuten, beinhaltet jedoch nicht die Vor- und
+      Nachbereitungszeit.
+  \end{description}
+\end{quote}
+
+\newpage
+
+\section{Übersicht} % (fold)
+\label{sec:Übersicht}
+
+\subsection{Informatik} % (fold)
+\label{sec:Informatik}
+
+\renewcommand{\arraystretch}{1.5}
+
+\begin{tabularx}{\textwidth}{cXcp{5.6cm}}
+  \textbf{Nr.} & \textbf{Veranstaltung} & \textbf{SWS} &
+  \multicolumn{1}{c}{\textbf{Dozent}}\\
+  \hline
+  1.1 & \hyperref[ssub:Funktionale Programmierung]{Funktionale Programmierung} &
+    3 & Prof.\,Dr. Thomas Kirste\\
+  1.2 & \hyperref[ssub:Grundlagen der Technischen Informatik]{Grundlagen der
+  Technischen Informatik} & 3 & Prof. Dr. Peter Luksch\\
+  1.3 & \hyperref[ssub:Einführung in die Programmierung mit C]{Einführung in die
+  Programmierung mit C} & 2 & Lutz Hellmig\\
+  1.4 & \hyperref[ssub:Abstrakte Datentypen]{Abstrakte Datentypen} & 2 &
+  Prof.\,Dr. Alke Martens\\
+  1.5 & \hyperref[ssub:Algorithmen und Datenstrukturen]{Algorithmen und
+Datenstrukturen} & 2 & Prof.\,Dr. Thomas Kirste \\
+  1.6 & \hyperref[ssub:Einführung in die Informatik für BWLer und
+VWLer]{Einführung Informatik für BWLer, VWLer} & 2 & Dr. Meike Klettke\\
+  1.7 & \hyperref[ssub:Einführung in die Praktische Informatik]{Einführung in
+die Praktische Informatik} & 3 & Prof.\,Dr.-Ing.\,habil.  Ralf Salomon\\
+  1.8 & \hyperref[ssub:Logik]{Logik} & 2 &
+  Prof.\,Dr.\,rer.\,nat.\,habil. Karsten Wolf\\
+\end{tabularx}
+
+% subsection Informatik (end)
+
+\subsection{Chemie/Medizin} % (fold)
+\label{sec:Chemie/Medizin}
+
+\begin{tabularx}{\textwidth}{cXcp{5.6cm}}
+  \textbf{Nr.} & \textbf{Veranstaltung} & \textbf{SWS} &
+  \multicolumn{1}{c}{\textbf{Dozent}}\\
+  \hline
+  2.1 & \hyperref[ssub:Medizinische Neurobiologie]{Medizinische Neurobiologie} &
+    2 & PD.\,Dr. Christian Andressen\\
+  2.2 & \hyperref[ssub:Anatomie des Nervensystems]{Anatomie des Nervensystems} &
+  2,7 & Prof. Wree\\
+  2.3 & \hyperref[ssub:Anatomie der Sinnesorgane]{Anatomie der Sinnesorgane} & 1
+      & PD.\,Dr. Christian Andressen\\
+  2.4 & \hyperref[ssub:Grundlagen Chemie für Mediziner]{Grundlagen Chemie für
+Mediziner}
+
+  (Vorlesung \& Experimente) & 2 +1 & Dr.
+  Gisela Boeck\\
+  2.5 & \hyperref[ssub:Technische Chemie]{Technische Chemie} & 2 & Prof. Udo
+  Kragl\\
+  2.6 & \hyperref[ssub:Anatomie für Nichtmediziner -- Teil I]{Anatomie für
+  Nichtmediziner -- Teil I} & 1 & Prof.\,Dr. Andreas Wree\\
+  2.7 & \hyperref[ssub:Allg. Zytologie und Histologie]{Allg. Zytologie und
+  Histologie} & 2 & PD.\,Dr. Oliver Schmitt\\
+\end{tabularx}
+
+% subsection Chemie/Medizin (end)
+
+\subsection{Biologie} % (fold)
+\label{sec:Biologie}
+
+\begin{tabularx}{\textwidth}{cXcp{5.6cm}}
+  \textbf{Nr.} & \textbf{Veranstaltung} & \textbf{SWS} &
+  \multicolumn{1}{c}{\textbf{Dozent}}\\
+  \hline
+  3.1 & \hyperref[ssub:Grundlagen der Genetik]{Grundlagen der Genetik} & 2 &
+  Prof.\,Dr. Reinhard Schröder\\
+  3.2 & \hyperref[ssub:Evolution]{Evolution} & 2 & Prof.\,Dr. Dieter Weiss\\
+\end{tabularx}
+
+% subsection Biologie (end)
+
+\subsection{Anglistik} % (fold)
+\label{sec:Anglistik}
+
+\begin{tabularx}{\textwidth}{cXcp{5.6cm}}
+  \textbf{Nr.} & \textbf{Veranstaltung} & \textbf{SWS} &
+  \multicolumn{1}{c}{\textbf{Dozent}}\\
+  \hline
+  4.1 & \hyperref[ssub:7th Fulbright Lecture Series: American Culture, Past and
+  Present]{7th Fulbright Lecture Series: American Culture, Past and Present} & 2
+  & Prof.\,Dr. Gabriele Linke\\
+\end{tabularx}
+
+% subsection Anglistik (end)
+
+\subsection{Geschichte} % (fold)
+\label{sec:Geschichte}
+
+\begin{tabularx}{\textwidth}{cXcp{5.6cm}}
+  \textbf{Nr.} & \textbf{Veranstaltung} & \textbf{SWS} &
+  \multicolumn{1}{c}{\textbf{Dozent}}\\
+  \hline
+  5.1 & \hyperref[ssub:Epochen im Überblick: Von der Reformation zum
+  Westfälischen Frieden]{Epochen im Überblick: Von der Reformation zum
+  Westfälischen Frieden} & 2 & Prof. Kersten Krüger\\
+  5.2 & \hyperref[ssub:Epochen im Überblick: Von der Reformation zum
+  Westfälischen Frieden (Teil 2)]{Epochen im Überblick: Von der Reformation zum
+  Westfälischen Frieden (Teil 2)} & 2 & Prof. Kersten Krüger\\
+  5.3 & \hyperref[ssub:Europäischer Absolutismus 1648--1789. Teil
+  1]{Europäischer Absolutismus 1648--1789. Teil 1} & 2 & Prof. Kersten Krüger\\
+  5.4 & \hyperref[ssub:Europäischer Absolutismus 1648--1789. Teil
+  2]{Europäischer Absolutismus 1648--1789. Teil 2} & 2 & Prof. Kersten Krüger\\
+  5.5 & \hyperref[ssub:Diaspora]{Diaspora} & 2 & Prof.\,Dr. Peter Burschel\\
+  5.6 & \hyperref[ssub:Die Stadt der Moderne (16.--20. Jahrhundert)]{Die Stadt
+  der Moderne (16.--20. Jahrhundert)} & 2 & Prof. Kersten Krüger\\
+  5.7 & \hyperref[ssub:Geschichte des deutschen Kommunismus (Teil 1:
+  1918--1945)]{Geschichte des deutschen Kommunismus (Teil 1: 1918--1945)} & 2 &
+  Prof.\,Dr. Werner Müller\\
+\end{tabularx}
+
+% subsection Geschichte (end)
+
+\subsection{Theologie} % (fold)
+\label{sec:Theologie}
+
+\begin{tabularx}{\textwidth}{cXcp{5.6cm}}
+  \textbf{Nr.} & \textbf{Veranstaltung} & \textbf{SWS} &
+  \multicolumn{1}{c}{\textbf{Dozent}}\\
+  \hline
+  6.1 & \hyperref[ssub:Einführung in die Geschichte des Christentums]{Einführung
+  in die Geschichte des Christentums} & 2 & Prof. Heinrich Holze\\
+  6.2 & \hyperref[ssub:Bibelkunde des Neuen Testaments]{Bibelkunde des Neuen
+  Testaments} & 2 & Dr. Klaus Bull\\
+  6.3 & \hyperref[ssub:Geschichte der frühjüdischen Literatur]{Geschichte der
+  frühjüdischen Literatur} & 2 & Dr. Klaus Bull\\
+\end{tabularx}
+
+% subsection Theologie (end)
+
+\subsection{Germanistik/Kommunikation} % (fold)
+\label{sec:Germanistik/Kommunikation}
+
+\begin{tabularx}{\textwidth}{cXcp{5.6cm}}
+  \textbf{Nr.} & \textbf{Veranstaltung} & \textbf{SWS} &
+  \multicolumn{1}{c}{\textbf{Dozent}}\\
+  \hline
+  7.1 & \hyperref[ssub:„Mach mal den Flyer! Du hast das doch studiert!“
+  Kommunikationswissenschaft zwischen Klischee und Wirklichkeit]{„Mach mal den
+  Flyer! Du hast das doch studiert!“ Kommunikationswissenschaft zwischen
+  Klischee und Wirklichkeit} & 2 & Mario Donick, M.\,A.\\
+  7.2 & \hyperref[ssub:Sprache -- Medien -- Kommunikation: Von den Anfängen der
+  deutschen Sprache zur Internet-Kommunikation]{Sprache -- Medien --
+  Kommunikation: Von den Anfängen der deutschen Sprache zur
+Internet-Kommunikation} & 2 & Mario Donick, M.\,A.\\
+  7.3 & \hyperref[ssub:Stationen deutscher Lyrik]{Stationen deutscher Lyrik} & 2
+  & Prof.\,Dr. Holger Helbig\\
+\end{tabularx}
+
+% subsection Germanistik/Kommunikation (end)
+
+\subsection{Allgemeine Studien} % (fold)
+\label{sec:Allgemeine Studien}
+
+\begin{tabularx}{\textwidth}{cp{14em}cX}
+  \textbf{Nr.} & \textbf{Veranstaltung} & \textbf{SWS} &
+  \multicolumn{1}{c}{\textbf{Dozent}}\\
+  \hline
+  8.1 & \hyperref[ssub:Was Bilder (un)sichtbar macht]{Was Bilder (un)sichtbar
+  macht} & 2 & interdisziplinär, Organisation: Dr. Christine Bräuning\\
+  8.2 & \hyperref[ssub:Leben-Licht-Materie]{Leben-Licht-Materie} & 2 &
+  interdisziplinär, Organisation: Dr. Christine Bräuning\\
+  8.3 & \hyperref[ssub:Strukturen und Symmetrien]{Strukturen und Symmetrien} & 2
+      & interdisziplinär, Organisation: Dr. Christine Bräuning\\
+  8.4 & \hyperref[ssub:Spielend Lernen]{Spielend Lernen} & 2 & interdisziplinär,
+  Organisation: Dr. Christine Bräuning\\
+  8.5 & \hyperref[ssub:„Erfolgreich Altern“]{„Erfolgreich Altern“} & 2 &
+  interdisziplinär, verantwortlich: Prof.\,Dr.-Ing. Thomas Kirste\\
+  8.6 & \hyperref[ssub:Einführung in die Demographie I]{Einführung in die
+  Demographie I} & 2 & Prof.\,Dr. G. Doblhammer-Reiter, Jun.-Prof.\,Dr.
+  Roland Rau\\
+\end{tabularx}
+
+% subsection Allgemeine Studien (end)
+
+\subsection{Sozialpsychologie} % (fold)
+\label{sec:Sozialpsychologie}
+
+\begin{tabularx}{\textwidth}{cXcp{5.6cm}}
+  \textbf{Nr.} & \textbf{Veranstaltung} & \textbf{SWS} &
+  \multicolumn{1}{c}{\textbf{Dozent}}\\
+  \hline
+  9.1 & \hyperref[ssub:Einführung in die Sozialpsychologie für
+  Lehramtskandidaten]{Einführung in die Sozialpsychologie für
+  Lehramtskandidaten} & 1 & Prof.  Dr. Christoph Perleth\\
+  9.2 & \hyperref[ssub:Einführung in die pädagogisch-psychologische Diagnostik
+  für Lehramtskandidaten]{Einführung in die pädagogisch-psychologische
+  Diagnostik für Lehramtskandidaten} & 1 & Prof.\,Dr. Christoph Perleth\\
+\end{tabularx}
+
+% subsection Sozialpsychologie (end)
+
+\subsection{Maschinenbau} % (fold)
+\label{sec:Maschinenbau}
+
+\begin{tabularx}{\textwidth}{cXcp{5.6cm}}
+  \textbf{Nr.} & \textbf{Veranstaltung} & \textbf{SWS} &
+  \multicolumn{1}{c}{\textbf{Dozent}}\\
+  \hline
+  10.1 & \hyperref[ssub:Fertigungslehre I]{Fertigungslehre I} & 3 &
+  Prof.\,Dr.-Ing. Martin Wanner\\
+\end{tabularx}
+
+% subsection Maschinenbau (end)
+
+\subsection{Philosophie} % (fold)
+\label{sec:Philosophie}
+
+\begin{tabularx}{\textwidth}{cXcp{5.6cm}}
+  \textbf{Nr.} & \textbf{Veranstaltung} & \textbf{SWS} &
+  \multicolumn{1}{c}{\textbf{Dozent}}\\
+  \hline
+  11.1 & \hyperref[ssub:Aristoteles und die abendländische
+  Philosophie]{Aristoteles und die abendländische Philosophie} & 2 &
+  Prof.\,Dr. Wolfgang Bernard\\
+\end{tabularx}
+
+% subsection Philosophie (end)
+
+%\subsection{Jura} % (fold)
+%\label{sec:Jura}
+
+%\begin{tabularx}{\textwidth}{cXcp{5.6cm}}
+  %\textbf{Nr.} & \textbf{Veranstaltung} & \textbf{SWS} &
+  %\multicolumn{1}{c}{\textbf{Dozent}}\\
+  %\hline
+  %12.1 & Einführung in die Rechtswissenschaft & 2 & Prof.\,Dr.\,iur. Jörg
+  %Benedict\\
+%\end{tabularx}
+
+% subsection Jura (end)
+
+\subsection{Wirtschaftswissenschaften} % (fold)
+\label{sec:Wirtschaftswissenschaften}
+
+\begin{tabularx}{\textwidth}{cXcp{5.6cm}}
+  \textbf{Nr.} & \textbf{Veranstaltung} & \textbf{SWS} &
+  \multicolumn{1}{c}{\textbf{Dozent}}\\
+  \hline
+  13.1 & \hyperref[ssub:Einführung in die Volkswirtschaftslehre]{Einführung in
+  die Volkswirtschaftslehre} & 2 & Prof.\,Dr. Michael Rauscher\\
+\end{tabularx}
+
+% subsection Wirtschaftswissenschaften (end)
+
+% section Übersicht (end)
+
+\newpage
+
+\section{Kommentare} % (fold)
+\label{sec:Kommentare}
+
+\subsection{Informatik} % (fold)
+\label{sub:Informatik}
+
+\subsubsection{Funktionale Programmierung} % (fold)
+\label{ssub:Funktionale Programmierung}
+
+% subsubsection subsubsection name (end)
+
+\begin{description}
+  \item[Lehrziel:] Die zukünftige Entwicklung großer Softwaresysteme setzt
+    entsprechend Aufgabenspezifikation die Nutzung unterschiedlicher
+    Programmierparadigmen innerhalb eines Softwaresystems voraus. Der
+    Studierende soll unterscheiden lernen, wann welches Paradigma am
+    zweckmäßigsten anzuwenden ist. Insbesondere durch Übung und Praktikum werden
+    Fertigkeiten im funktionalen Programmieren erworben, wobei die
+    Besonderheiten gegenüber anderen Paradigmen im Vordergrund stehen.
+  \item[Inhalt:] Die funktionale Programmierung stellt das zweite wichtige
+    Programmierparadigma neben der imperativen Programmierung dar. Es basiert
+    auf dem Prinzip der Textersetzung („equational reasoning“) und behandelt
+    Funktionen als „first class objects“. Das Modul behandelt die theoretischen
+    Grundlagen der funktionalen Programmierung, führt in die Sprache Haskell ein
+    und zeigt verschiedene praktische Anwendungen. Die im Modul integrierten
+    Übungen ermöglichen konkrete Erfahrungen mit der funktionalen Programmierung
+    zu machen.
+\end{description}
+\textsf{\textbf{Literatur:}}
+\begin{itemize}\itemsep0pt
+  \item Thompson, S. Haskell. The Craft of Functional Programming.
+    Addison-Wesley, 1999. ISBN 978-0201342758
+  \item Barendregt, H. P.: The Lambda Calculus: Its Syntax and Semantics.
+    Studies in Logic and the Foundations of Mathematics, Band 103, North
+    Holland, 1984
+  \item Bird, R. Introduction to Functional Programming using Haskell.
+    Addison-Wesley, 1998. ISBN 978-0134843469
+  \item Bird, R.; Wadler, P.: Einführung in die funktionale Programmierung.
+    Hanser Studienbücher der Informatik, Prentice-Hall, 1992
+  \item Hudak, P.; Fasel, J. H.; Peterson, J.: A Gentle Introduction to
+    Haskell.  http://www.haskell.org/tutorial, 1997
+  \item The Hugs System 1998. http://www.haskell.org/hugs
+  \item Myers, C.; Clack, Ch.; Poon, E.: Programming with Standard ML.
+    Prentice-Hall, 1993
+  \item Pepper, P.: Funktionale Programmierung in \textsc{Opal}, \textsc{ML},
+    \textsc{Haskell} und \textsc{Gofer}. Springer Verlag, 1999
+  \item Steele Jr., G. L.: Common Lisp: The Language. Digital Press, 1984
+\end{itemize}
+
+% subsection Funktionale Programmierung (end)
+
+\subsubsection{Grundlagen der Technischen Informatik} % (fold)
+\label{ssub:Grundlagen der Technischen Informatik}
+
+\begin{description}
+  \item[Lehrziel:] Teilnehmer, die dieses Modul erfolgreich absolviert haben,
+    sollen in der Lage sein, Schaltnetze und Schaltwerke mit den behandelten
+    Methoden unter Berücksichtigung von Optimierungszielen zu entwerfen, sowie
+    gegebene Schaltungen zu analysieren und zu verstehen. Damit ist die
+    Grundlage geschaffen für das Verständnis der Struktur und Funktionsweise von
+    Steuerwerken und Operationswerken, die im Modul Rechnersysteme behandelt
+    wird.
+  \item[Inhalt:] Dieses Modul vermittelt die elementaren Grundlagen der
+    digitalen Rechnertechnik
+  \begin{itemize}\itemsep0pt
+    \item Zahlensysteme und Zahlendarstellung
+    \item Codierung
+    \item Boolesche Algebra
+    \item Schaltnetze (kombinatorische Schaltungen)
+    \item Beschreibungsformen
+    \item Minimierung von Schaltfunktionen
+    \item Zeitverhalten
+    \item wichtige kombinatorische Bauelemente
+    \item Speicherelemente
+    \item Flipflops
+    \item statische und dynamische Speicherzellen
+    \item Schaltwerke (sequentielle Schaltungen)
+    \item Funktionsprinzip
+    \item Beschreibungsformen
+    \item Zeitverhalten
+    \item Entwurfs- und Optimierungsmethoden
+    \item Ausgewählte Aspekte des Entwurfs und der Herstellung hochintegrierter
+      digitaler Schaltungen in der Praxis
+  \end{itemize}
+\end{description}
+
+% subsection Grundlagen der Technischen Informatik (end)
+
+\subsubsection{Einführung in die Programmierung mit C} % (fold)
+\label{ssub:Einführung in die Programmierung mit C}
+
+\begin{description}
+  \item[Inhalt:] Dieses Modul vermittelt Grundkenntnisse zur Programmierung mit
+    der Programmiersprache C.
+  \begin{itemize}\itemsep0pt
+    \item Begriff Informatik
+    \item Zahlensysteme und elementare Logik
+    \item Algorithmen (Schrittweise Verfeinerung, Pseudocode, Modularität,
+      Rekursion)
+    \item Syntaxbeschreibung von Programmiersprachen
+    \item Struktur von C-Programmen
+    \item Kontrollstrukturen in C
+    \item Strukturierung von C-Programmen (Funktionen, Blöcke, Rekursion)
+    \item Strukturierte Datentypen (Arrays, Strings, Strukturen, Files)
+  \end{itemize}
+\end{description}
+
+% subsection Einführung in die Programmierung mit C (end)
+
+\subsubsection{Abstrakte Datentypen} % (fold)
+\label{ssub:Abstrakte Datentypen}
+
+\begin{description}
+  \item[Lehrziel:] Die Teilnehmer sollen in die Lage versetzt werden, Probleme
+    als Gesamtheit von Daten und Algorithmen zu spezifizieren. Für die so
+    spezifizierte Problemstellung werden von den Studierenden effiziente
+    Datenstrukturen gefunden. Sie sind auch in der Lage, eine algorithmischen
+    Programmiersprache zur Formulierung der Algorithmen zu nutzen. Die
+    Studierenden sind befähigt, kleinere Projekte eigenständig von der Analyse
+    über die Spezifikation bis zur Implementierung durchzuführen.
+  \item[Inhalt:] Einführung in die Softwareentwicklung
+    \begin{itemize}\itemsep0pt
+      \item Strukturierte Programmierung
+      \item Rekursion
+      \item algebraische Spezifikation Abstrakter Datentypen
+      \item Datenstrukturen zur effektiven Implementation mit Hilfe einer
+        algorithmischen Sprache
+      \item Spezifikation und Implementation mit unterschiedlichen
+        Datenstrukturen (z.B. Liste, Keller, Schlange, Baum, Tabelle)
+    \end{itemize}
+\end{description}
+\textsf{\textbf{Literatur:}}
+\begin{itemize}\itemsep0pt
+  \item Forbrig, Peter, Introduction to programming by abstract data types with
+    53 examples, 59 exercises and CD-ROM, ISBN: 3446217827 (kart.) München
+    [u.a.] : Fachbuchverl. Leipzig im Carl-Hanser-Verl., 2001
+  \item Horebeek, Ivo van (Lewi, Johan;), Algebraic specifications in software
+    engineering : an introduction, ISBN: 3540516263 ISBN: 0387516263, Berlin
+    [u.a.] : Springer, 1989
+  \item Horn/Kerner/Forbrig, Lehr- und Übungsbuch Informatik - Grundlagen und
+    Überblick, Fachbuchverl. Leipzig im Carl-Hanser-Verl., 2003
+  \item Horn/Kerner/Forbrig, Lehr- und Übungsbuch Informatik - Theorie der
+    Informatik, Fachbuchverl. Leipzig im Carl-Hanser-Verl., 2002
+  \item Sedgewick, Robert, Algorithmen ISBN: 3827370329 (Gb.) , München [u.a.],
+    Addison-Wesley, 2003
+\end{itemize}
+
+% subsection Abstrakte Datentypen (end)
+
+\subsubsection{Algorithmen und Datenstrukturen} % (fold)
+\label{ssub:Algorithmen und Datenstrukturen}
+
+Dringend empfohlene Voraussetzung: Vorlesung \hyperref[ssub:Abstrakte
+Datentypen]{„Abstrakte Datentypen“}
+
+\begin{description}
+  \item[Lehrziel:] Selbständiges Entwickeln und Implementieren von Algorithmen,
+    die Beherrschung der dazu erforderlichen Datenstrukturen und
+    Entwurfsverfahren. Verbindung der Fähigkeit zur Formulierung von Verfahren
+    mit Hilfe abstrakter Datentypen und der Fähigkeiten zum Programmieren in
+    höheren Programmiersprachen. Fähigkeit, die Effizienz von Algorithmen,
+    insbesondere ihren Zeit- und Speicherbedarf mit mathematischen Methoden zu
+    analysieren und so die Qualität von verschieden Algorithmen zur Lösung von
+    Problemen beurteilen zu können.
+
+    Die Teilnehmer sollen in der Lage versetzt werden, Algorithmen zu
+    spezifizieren und zu implementieren. Sie sollen auch die Komplexität
+    abschätzen können und die Korrektheit einschätzen.
+\end{description}
+\textsf{\textbf{Inhalt:}}
+\begin{itemize}\itemsep0pt
+  \item Grundlegende Begriffe und formale Eigenschaften von Algorithmen
+    Techniken der Algorithmenentwicklung
+  \item Datentypen und Datenstrukturen
+  \item Grundlegende Datenstrukturen der Informatik und ihre Implementierung
+  \item Ausgewählte Algorithmen aus dem Bereich Sortieren und Suchen
+  \item Asymptotische Komplexitätsanalysen
+\end{itemize}
+\textsf{\textbf{Literatur:}}
+\begin{itemize}\itemsep0pt
+  \item T. Ottmann, P. Widmayer, Algorithmen und Datenstrukturen.
+  \item R. Sedgewick, Algorithmen in Java.
+  \item G. Brassard, P. Bratley, Algorithmik - Theorie und Praxis.
+  \item Th. Cormen, Ch. Leiserson, R. Rivest, Introduction to Algorithms.
+  \item weitere aktuelle Literaturempfehlungen erfolgen zu Beginn der
+    Lehrveranstaltung.
+\end{itemize}
+
+% subsection Algorithmen und Datenstrukturen (end)
+
+\subsubsection{Einführung in die Informatik für BWLer und VWLer} % (fold)
+\label{ssub:Einführung in die Informatik für BWLer und VWLer}
+
+\begin{description}
+  \item[Lehrziel:] Dieses Modul bietet eine Einführung in die Grundlagen des
+    Fachgebietes Wirtschaftsinformatik. Die Schüler erhalten einen Überblick
+    über Werkzeuge, Vorgehensweisen und Probleme an der Schnittstelle zwischen
+    Wirtschaft und Informatik. Sie erwerben grundlegende Fähigkeiten, um
+    Anwendungen mit Hilfe von Methoden der Informatik zu lösen.
+\end{description}
+\textsf{\textbf{Inhalt:}}
+\begin{itemize}\itemsep0pt
+  \item Grundlagen: Informationsverarbeitung, Rechner
+  \item Entwicklung von Informationssystemen
+  \item Geschäftsprozessmodellierung, Workflows und Datenmodellierung
+  \item Überblick: Datenbanken und Informationssysteme
+  \item Auswertung von Daten: Datenanalyse, Mining, Data Warehouses
+  \item Datensicherheit und Datenschutz
+  \item Computernetze, verteilte Systeme
+\end{itemize}
+\textsf{\textbf{Literatur:}}
+\begin{itemize}\itemsep0pt
+  \item Hans Robert Hansen, Gustaf Neumann: Wirtschaftsinformatik I, UTB 2005
+  \item (Hans Robert Hansen, Gustaf Neumann: Wirtschaftsinformatik II, UTB
+    2005), optional
+  \item Helmut Herold / Bruno Lurz / Jürgen Wohlrab: Grundlagen der Informatik,
+    Pearson Studium, 2006
+\end{itemize}
+
+% subsection Einführung in die Informatik für BWLer und VWLer (end)
+
+\subsubsection{Einführung in die Praktische Informatik} % (fold)
+\label{ssub:Einführung in die Praktische Informatik}
+
+\begin{description}
+  \item[Inhalt:] Sicherer Umgang bei der Erstellung von Programmen kleinerer und
+    mittlerer Größe zur Lösung von Aufgaben aus den Ingenieurs- und
+    Geisteswissenschaften. Darüber hinaus werden die Grundzüge über das
+    Zusammenspiel von Hardware und Betriebssystem sowie Betriebssystem und
+    Programm vermittelt. Ein weiteres Ziel ist, dass die Absolventen in der Lage
+    sind, hardwarenah zu programmieren. Ferner sind die Teilnehmer in der Lage,
+    für gegebene technische Problemstellungen entsprechende Algorithmen zu
+    entwickeln.
+
+    Dieses Modul ist eine Fortführung des Moduls Informatik I. Aufbauend auf
+    die dort bereits vermittelten Grundkenntnisse, werden in diesem Modul
+    komplexere Algorithmen, dynamische Datenstrukturen sowie einfache
+    Komplexitätsabschätzungen behandelt.
+
+    \begin{itemize}\itemsep0pt
+      \item Grundlegende Algorithmen aus den Bereichen Filtern, Konvertieren und
+        Suchen
+      \item Entwurf und Realisierung von Textbasierten
+        Ein-/Ausgabeschnittstellen
+      \item Aufwandsabschätzungen ($\mathcal{O}$-Kalkül)
+      \item Variablen, Adressen und Parameterübergabemechanismen
+      \item Dynamische Datenstrukturen, Listen, Bäume, Hashtabllen und
+        Komplexität dieser Datenstrukturen
+      \item Verteilte Verwaltung und Bearbeitung von C-Programmen
+      \item Programmieren einfacher Scanner- und Parserfunktionalitäten
+      \item Bearbeiten einer größeren Programmieraufgabe.
+    \end{itemize}
+  \item[Voraussetzung:] Kenntnisse der Programmiersprache C
+\end{description}
+
+% subsection Einführung in die Praktische Informatik (end)
+
+\subsubsection{Logik} % (fold)
+\label{ssub:Logik}
+
+\begin{description}
+  \item[Lehrziel:] Das Modul führt in die Grundlagen der Aussagenlogik und der
+    Prädikatenlogik ein. Es schult die Fähigkeit zur präzisen Definition von
+    Begriffen und zur folgerichtigen Argumentation. Es demonstriert die
+    Beziehung zwischen Syntax und Semantik am Beispiel von Logikkalkülen.
+\end{description}
+\textsf{\textbf{Inhalt:}}
+\begin{itemize}\itemsep0pt
+  \item Explizite Definitionen und direkte Beweise am Beispiel
+    mengentheoretischer Grundkonzepte
+  \item Induktive Definitionen und Beweise am Beispiel einfacher formaler
+    Sprachen
+  \item Syntax und Semantik der Aussagenlogik
+  \item Normalformen, Erfüllbarkeit, Hornformeln, Markierungsalgorithmus
+  \item aussagenlogische Resolution
+  \item Folgern und Ableiten
+  \item Syntax und Semantik der Prädikatenlogik erster Stufe
+  \item Erfüllbarkeit, Modelle, Allgemeingültigkeit
+  \item bereinigte Pränexform, Skolemform, Herbrandstrukturen
+  \item Unifikation und prädikatenlogische Resolution
+  \item Ausblick auf weitere informatikrelevante Logikkalküle, z.B. modale und
+    temporale Logiken.
+\end{itemize}
+
+% subsection Logik (end)
+
+% subsection Informatik (end)
+
+\subsection{Chemie/Medizin} % (fold)
+\label{sub:Chemie/Medizin}
+
+\subsubsection{Medizinische Neurobiologie} % (fold)
+\label{ssub:Medizinische Neurobiologie}
+
+\begin{description}
+  \item[Allgemeiner Inhalt der Vorlesung:] Aufbau der Zellen und mikroskopische
+    Anatomie des Nervensystems, makroskopische Anatomie und Funktion des
+    Nervensystems, Grundlagen der mikroskopischen und makroskopischen Anatomie
+    der Sinnesorgane , Entwicklungs- und experimentelle Neurobiologie
+  \item[Ziel:] Erreichen fachübergreifender Kompetenz zum Verständnis
+    physiologischer, pathophysiologischer und neurologischer Unterrichtsinhalte
+\end{description}
+\textsf{\textbf{Einheit:}}
+\begin{enumerate}\itemsep0pt
+  \item Nervensystem -- allgemeiner Überblick
+  \begin{itemize}\itemsep0pt
+    \item Nervensystem als Verband neuronaler und glialer Zellen
+    \item Grundprinzip einer neuronalen Organisation
+  \end{itemize}
+  \item Zelluläre Neurobiologie
+  \item Makroskopischer Aufbau
+  \begin{itemize}\itemsep0pt
+    \item zentrales NS / peripheres NS / enterisches NS
+    \item animalisches / vegetatives (sympathisches / parasympathisches) NS
+  \end{itemize}
+  \item Sinnesorgane
+  \item Funktionelle Neuroanatomie
+  \item Entwicklung
+  \item Experimentelle Neurobiologie
+\end{enumerate}
+
+% subsection Medizinische Neurobiologie (end)
+
+\subsubsection{Anatomie des Nervensystems} % (fold)
+\label{ssub:Anatomie des Nervensystems}
+
+\begin{description}
+  \item[Lehrziel:] Bau und Verknüpfung des zentralen Nervensystems des Menschen
+  \item[Inhalt:] weitgehend entsprechend Gegenstandskatalog für den
+    schriftlichen Teil des Ersten Abschnitts der Ärztlichen Prüfung (ÄAppO 2002
+    IMPP-GK 1), klinische Beispiele
+\end{description}
+\textsf{\textbf{Literatur:}}\\
+Lehrbücher:
+\begin{itemize}\itemsep0pt
+  \item Schiebler: Anatomie
+  \item Zilles-Rehkämper: Funktionelle Neuroanatomie
+  \item Trepel: Neuroanatomie
+  \item Benninghoff: Anatomie
+\end{itemize}
+Atlanten:
+\begin{itemize}\itemsep0pt
+  \item Sobotta: Anatomie
+  \item Tillmann: Atlas der Anatomie
+  \item Köpf-Maier: Atlas der Anatomie des Menschen
+\end{itemize}
+
+% subsection Anatomie des Nervensystems (end)
+
+\subsubsection{Anatomie der Sinnesorgane} % (fold)
+\label{ssub:Anatomie der Sinnesorgane}
+
+\begin{description}
+  \item[Lehrziel:] Topographie, Bau und Funktion der Sinnesorgane
+  \item[Inhalt:] weitgehend entsprechend Gegenstandskatalog für den
+    schriftlichen Teil des Ersten Abschnitts der Ärztlichen Prüfung (ÄAppO 2002
+    IMPP-GK 1), klinische Bezüge
+\end{description}
+\textsf{\textbf{Literatur:}}
+\begin{itemize}\itemsep0pt
+  \item Schiebler: Anatomie
+  \item Junqueira: Histologie
+  \item Zilles Rehkämper: Funktionelle Neuroanatomie
+  \item Kahle/Frotscher: Neuroanatomie und Sinnesorgane
+  \item Stevens Lowe: Histologie des Menschen
+  \item Sobotta/Welsch: Histologie
+\end{itemize}
+
+% subsection Anatomie der Sinnesorgane (end)
+
+\subsubsection{Grundlagen Chemie für Mediziner} % (fold)
+\label{ssub:Grundlagen Chemie für Mediziner}
+
+\textsf{\textbf{Inhalt:}}
+\begin{itemize}\itemsep0pt
+  \item grundlegende chemische Gesetze, Molbegriff
+  \item Atombau und Periodensystem der Elemente
+  \item Arten der chemischen Bindung
+  \item Stoffe und ihre Zustandsformen, Gasgesetze
+  \item Lösungen und Gehaltsgrößen, Kolloide, Osmose, Verteilungsgleichgewichte
+  \item Energetik und Kinetik chemischer Reaktionen
+  \item Elektrolyte, Säure-Base-Reaktionen, pH-Wert, Puffer
+  \item Redoxreaktionen und elektrochemische Reaktionen
+  \item Chemie der Hauptgruppenelemente und einiger ausgewählter
+    Nebengruppenelemente
+  \item Kohlenwasserstoffe, Halogenkohlenwasserstoffe, Alkanole, Alkanale,
+    Alkansäuren, Ether, Amine, Aminosäuren
+  \item Peptide und Proteine, Kohlenhydrate, Fette in einer Übersicht
+  \item Isomerie und ihre verschiedenen Erscheinungsformen
+\end{itemize}
+\textsf{\textbf{Literatur:}}
+\begin{itemize}\itemsep0pt
+  \item Henning, H., Sicker, D., Franz, J.: Grundlagen der Chemie für Mediziner
+    systematisch (auch für Studierende anderer biologisch orientierter
+    Wissenschaften), 1. Auflage 2002, UNI-MED Verlag AG, Bremen. Bisherige
+    Auflagen erschienen im Johann Ambrosius Barth-Verlag
+  \item Zeeck, A.: Chemie für Mediziner, 5. Auflage 2003, Verlag Urban \&
+    Fischer, München
+  \item Riedel, E.: Anorganische Chemie, 5. Auflage 2002, Verlag Walter de
+    Gruyter, Berlin
+  \item Wünsch, K.-H., Miethchen, R., Ehlers, D.: Grundkurs Organische Chemie,
+    6. Auflage 1993, Johann Ambrosius Barth-Verlag
+  \item Fittkau, S.: Organische Chemie, 6. Auflage 1988, Fischer-Verlag, Jena
+\end{itemize}
+
+% subsection Grundlagen Chemie für Mediziner (end)
+
+\subsubsection{Technische Chemie} % (fold)
+\label{ssub:Technische Chemie}
+
+\begin{description}
+  \item[Lehrziel:] Grundlegendes Verständnis zu Grundoperationen und
+    Reaktionstechnik, Prozesssynthese
+
+    Vertiefung ausgewählter Aspekte und Prozesskunde
+    Umgang mit komplexen technisch-chemischen Apparaten
+
+    Auswertung /Diskussion / Fehlerbetrachtung.
+  \item[Grundlagen:] Mechanische Grundoperationen; thermische Trennverfahren;
+    ideale und reale Reaktoren; Verweilzeitverteilung; Berechnung von Reaktoren
+  \item[Vertiefung:] Mehrphasensysteme, Wärmeeffekte, spezielle Trennverfahren,
+    Prozesskunde
+  \item[Praktikum:] Extraktion, Adsorption, Rektifikation, Wärmetauscher,
+    Filtration, Verweilzeitverteilung, begaster Rührkessel, Mikroreaktor,
+    Elektrochemie, Modellierung
+\end{description}
+
+% subsubsection Technische Chemie (end)
+
+\subsubsection{Anatomie für Nichtmediziner -- Teil I} % (fold)
+\label{ssub:Anatomie für Nichtmediziner -- Teil I}
+
+\begin{description}
+  \item[Inhalt:] Bau der Zellen, Gewebe und Organe des Menschen; mikroskopische
+    und makroskopische Anatomie wichtiger Systeme des Menschen
+  \item[Literatur:] Schiebler: Anatomie; Faller (bearbeitet von M. Schünke): Der
+    Körper des Menschen -- Einführung in Bau und Funktion
+\end{description}
+
+% subsubsection Anatomie für Nichtmediziner -- Teil I (end)
+
+\subsubsection{Allgemeine Zytologie und Histologie} % (fold)
+\label{ssub:Allg. Zytologie und Histologie}
+
+\begin{description}
+  \item[Inhalt:] Bau und Funktionen der Zellen und der Gewebe des Menschen
+    weitgehend entsprechend dem Gegenstandskatalog für den schriftlichen Teil
+    des Ersten Abschnitts der Ärztlichen Prüfung (ÄAppO 2002 IMPP-GK 1)
+\end{description}
+\textsf{\textbf{Literatur:}}\\
+Lehrbücher:
+\begin{itemize}\itemsep0pt
+  \item Schiebler: Anatomie
+  \item Benninghoff: Anatomie
+  \item Lüllmann-Rauch: Histologie
+  \item Welsch: Lehrbuch Histologie
+  \item Ulfig: Histologie
+\end{itemize}
+Atlanten:
+\begin{itemize}\itemsep0pt
+  \item Kühnel: Taschenatlas
+\end{itemize}
+
+% subsubsection Allgemeine Zytologie und Histologie (end)
+
+% subsection Chemie/Medizin (end)
+
+\subsection{Biologie} % (fold)
+\label{sub:Biologie}
+
+\subsubsection{Grundlagen der Genetik} % (fold)
+\label{ssub:Grundlagen der Genetik}
+
+\begin{description}
+  \item[Inhalt:] Einführung in die klassische und molekulare Genetik. Es werden
+    die Grundlagen über die Erhaltung und Weitergabe der genetischen Information
+    vermittelt. DNA, RNA, Chromosomen. Mutationen, Mechanismen der
+    Rekombination, Einführung in Humangenetik, Einführung in die Gentechnik
+    u.a..
+
+    Prüfungsfach im Vordiplom:\\
+    Grundpraktikum Genetik. Kreuzungsgenetik (Drosophila);
+    Chromosomendarstellungen Mensch (mit Chromosomenaberrationen), Pflanzen,
+    Drosophila; Mikrobengenetik (Mutationen, Reparaturmechanismen,
+    Bakteriophagenkreuzung)
+\end{description}
+\textsf{\textbf{Literatur:}}
+\begin{itemize}\itemsep0pt
+  \item Hennig, Genetik, Springer Verlag 2002, 3. Auflage
+  \item Knippers, Molekulare Genetik, Thieme Verlag 2001, 8. Auflage
+  \item Munk (Hrsg.), Grundstudium Biologie/Genetik, Spektrum Verlag 2001
+  \item Alberts/Johnson/Lewis/Raff/Roberts/Walter, Molekularbiologie der Zelle,
+    Wiley VCH, 2004, 4. Auflage
+\end{itemize}
+
+% subsubsection Grundlagen der Genetik (end)
+
+\subsubsection{Evolution} % (fold)
+\label{ssub:Evolution}
+
+\begin{description}
+  \item[Inhalt:] Die Vorlesung gibt den Stand der biologischen Evolutionslehre
+    wieder und erklärt ihren Aussagewert sowie die Methoden der
+    Erkenntnisgewinnung auf dem Gebiet der naturwissenschaftlichen
+    Evolutionslehre.
+  \begin{enumerate}\itemsep0pt
+    \item Die Entwicklung des Evolutionsgedankens (Geschichte der Evolutionslehre)
+    \item Die klassischen und die molekularen Fachgebiete der Biologie als
+      „Säulen“ der Evolutionslehre
+    \item Die „Triebkräfte“ oder Mechanismen der Evolution (Mutation,
+      Rekombination, Isolation, Selektion und Gendrift)
+    \item Die Entstehung des Lebens von der „Ursuppe“ bis zu den vielzelligen
+      Organismen
+    \item Denkweisen in der naturwissenschaftlichen Evolutionsbiologie (Hierbei
+      wird auch dargelegt, warum Kre"-a"-tio"-nis"-mus- und Intelligent Design-Lehren
+      nicht Gegenstand naturwissenschaftlicher Betrachtungen sein können).
+  \end{enumerate}
+  \item[Literatur:] \url{http://www.vifabio.de/darwinjahr2009/}
+\end{description}
+
+% subsubsection Evolution (end)
+
+% subsection Biologie (end)
+
+\subsection{Anglistik} % (fold)
+\label{sub:Anglistik}
+
+\subsubsection{7th Fulbright Lecture Series: American Culture, Past and Present}
+\label{ssub:7th Fulbright Lecture Series: American Culture, Past and Present}
+
+This lecture series brings American Fulbright professors to Rostock, who will be
+teaching at German universities in the summer of 2009. The guest speakers will
+lecture on their particular field within American Studies, addressing such
+issues as history, politics, literature, ethnicity, and popular culture. The
+final list of speakers and topics will be published at the beginning of the
+summer term. Each lecture will consist of a brief introduction of the speaker,
+his/her presentation (in English) and question time (in English or German).
+
+% subsubsection 7th Fulbright Lecture Series: American Culture, Past and Present (end)
+
+% subsection Anglistik (end)
+
+\subsection{Geschichte} % (fold)
+\label{sub:Geschichte}
+
+\subsubsection{Epochen im Überblick: Von der Reformation zum Westfälischen
+Frieden} % (fold)
+\label{ssub:Epochen im Überblick: Von der Reformation zum Westfälischen Frieden}
+
+\begin{description}
+  \item[Inhalt:] Die Vorlesung gibt einen Überblick über die Strukturgeschichte
+    von der Reformation bis zum Westfälischen Frieden (1500--1648) in zwei
+    Semestern, aber jedes Semester bildet in sich eine thematische Einheit und
+    kann für sich besucht werden. Im Wintersemester 2009/2010 werden folgende
+    Themenbereiche behandelt: Bevölkerung, Wirtschaft, Agrarverfassung,
+    Reformation, im Semester danach: Kirche und Staat, Politische Geschichte,
+    Militärische Rvolution, 30jähriger Krieg Verfasssungskonflikte. Ausblicke in
+    die Kulturgeschichte werden gegeben.
+\end{description}
+\textsf{\textbf{Literatur:}}
+\begin{itemize}\itemsep0pt
+  \item Aubin, Hermann und Zorn, Wolfgang (Hrsg.): Handbuch der deutschen
+    Wirtschafts- und Sozialgeschichte. Band 1. Stuttgart 1971.
+  \item Burkhardt, Johannes: Der Dreißigjährige Krieg. Frankfurt am Main 1992
+    (Moderne Deutsche Geschichte 2).
+  \item Cipolla, Carlo M. und Borchardt, Knut (Hrsg.): Europäische
+    Wirtschaftsgeschichte. Band 2: Das 16. und 17. Jahrhundert. Stuttgart 1983
+    (UTB 1268).
+  \item Dülmen, Richard van: Entstehung des frühneuzeitlichen Europa
+    1150-1648.  Frankfurt 1982.
+  \item Fischer, Wolfram, van Houte, Jan A., Kellenbenz, Hermann, Mieck, Ilja,
+    Friedrich Vittinghoff (Hrsg.): Handbuch der europäischen Wirtschafts- und
+    Sozialgeschichte. Band 3: Europäische Wirtschafts- und Sozialgeschichte
+    vom ausgehenden Mittelalter bis zur Mitte des 17. Jahrhunderts. Hrsg. von
+    Hermann Kellenbenz. Stuttgart 1986.
+  \item Gebhardt, Bruno: Handbuch der deutschen Geschichte. 9. Auflage hrsg.
+    v. Herbert Grundmann. Band 2. Stuttgart 1970. [Auch als Taschenbücher bei
+    dtv]
+  \item Goertz, Hans-Jürgen: Religiöse Bewegungen in der Frühen Neuzeit.
+    München 1993 (Enzyklopädie Deutscher Geschichte 20).
+  \item Hippel, Wolfgang von: Armut, Unterschichten, Randgruppen in der frühen
+    Neuzeit.  München 1995 (Enzyklopädie Deutscher Geschichte 34).
+  \item Holenstein, André: Bauern zwischen Bauernkrieg und Dreißigjährigem
+    Krieg.  München 1996 (Enzyklopädie Deutscher Geschichte 38).
+  \item Schulze, Winfried: Deutsche Geschichte im 16. Jahrhundert 1500-1618.
+    Frankfurt am Main 1987 (Moderne Deutsche Geschichte 1)
+  \item Vogler, Günter: Europas Aufbruch in die Neuzeit. Stuttgart 2003
+    (Handbuch der Geschichte Europas Band 5).
+\end{itemize}
+Eine ausführlichere Literaturliste wird in StudIP bereitgestellt.
+
+% subsubsection Epochen im Überblick: Von der Reformation zum Westfälischen
+% Frieden (end)
+
+\subsubsection{Epochen im Überblick: Von der Reformation zum Westfälischen
+Frieden (Teil 2)} % (fold)
+\label{ssub:Epochen im Überblick: Von der Reformation zum Westfälischen Frieden
+(Teil 2)}
+
+\begin{description}
+  \item[Inhalt:] Die Vorlesung setzt den Überblick über die Strukturgeschichte
+    fort, der im ersten Teil die Zeit von der Reformation bis zum Westfälischen
+    Frieden (1500--1648), im zweiten den europäischen Absolutismus (1648--1789)
+    zum Gegenstand hat. Jeder Teil beansprucht zwei Semester, aber jedes
+    Semester bildet in sich eine thematische Einheit und kann für sich besucht
+    werden. Im Sommersemester 2008 kommt der erste Teil zum Abschluss; es werden
+    folgende Themenbereiche behandelt: Kirche und Staat, Politische Geschichte,
+    Militärverfassung, 30jähriger Krieg. Ausblicke in die Kulturgeschichte
+    werden gegeben. Arbeitsmaterial ist im Printzentrum im Rostocker Hof
+    (Galerie) erhältlich. Die Teilnahme an der Vorlesung ist nur sinnvoll, wenn
+    alle Teilnehmer das Arbeitsmaterial in jeder Sitzung dabei haben.
+\end{description}
+
+% subsubsection Epochen im Überblick: Von der Reformation zum Westfälischen
+% Frieden (Teil 2) (end)
+
+\subsubsection{Europäischer Absolutismus 1648--1789. Teil 1} % (fold)
+\label{ssub:Europäischer Absolutismus 1648--1789. Teil 1}
+
+\begin{description}
+  \item[Inhalt:] Diese strukturgeschichtliche Vorlesung ist auf zwei Semester
+    angelegt; sie soll einen Überblick vermitteln. Als thematische Schwerpunkte
+    sind vorgesehen: politische Theorie und Verfassung nach den konkurrierenden
+    herrschaftlichen und genossenschaftlichen Prinzipien. Dabei stehen Nord-,
+    Mittel- und Westeuropa im Vordergrund. Es folgen -- voraussichtlich in einem
+    späteren Semester -- die Bereiche der Wirtschaft, der Gesellschaft und der
+    Politik. Abschließend werden die Reformen des Aufgeklärten Absolutismus
+    dargestellt und in ihrer Bedeutung für die Moderne erörtert. Die in der
+    Vorlesung verwendeten Quellentexte liegen als Kopiervorlagen im Copyshop im
+    Brunnenhof bereit. Es ist unerlässlich, dass alle Teilnehmerinnen und
+    Teilnehmer diese Quellen in jede Sitzung mitbringen.
+\end{description}
+\textsf{\textbf{Literatur:}}
+\begin{itemize}\itemsep0pt
+  \item Asch, Ronald (Hrsg.): Der Absolutismus - ein Mythos? Köln u. a. 1996.
+  \item Brandt, Peter: Von der Adelsmonarchie zur königlichen "Eingewalt", in: HZ 250, 1990, S. 33-72.
+  \item Barudio, Günter: Das Zeitalter des Absolutismus und der Aufklärung
+    1648-1779. Fischer Weltgeschichte 25. Frankfurt am Main 1981.
+  \item Duchhardt, Heinz: Das Zeitalter des Absolutismus. München 3. Aufl. 1998.
+  \item Hinrichs, Ernst (Hrsg.): Absolutismus. Frankfurt am Main 1987.
+  \item Hinrichs, Ernst: Fürsten und Mächte. Zum Problem des europäischen Absolutismus. Göttingen 2000.
+  \item Kunisch, Johannes: Absolutismus. Europäische Geschichte vom
+    Westfälischen Frieden bis zur Krise des Ancien Regime Göttingen 2. Aufl.
+    1999.
+  \item Wehler, Hans-Ulrich: Deutsche Gesellschaftsgeschichte 1700-1815. München 2.  Aufl. 1989.
+\end{itemize}
+Eine ausführliche Literaturliste steht in der Webseite des Historischen
+Instituts, Lehre, Materialien, Literatur zu Lehrveranstaltungen
+
+% subsubsection Europäischer Absolutismus 1648--1789. Teil 1 (end)
+
+\subsubsection{Europäischer Absolutismus 1648--1789. Teil 2} % (fold)
+\label{ssub:Europäischer Absolutismus 1648--1789. Teil 2}
+
+Dies ist die Fortsetzung der Veranstaltung „\hyperref[ssub:Europäischer
+Absolutismus 1648--1789. Teil 1]{Europäischer Absolutismus 1648--1789. Teil 1}“.
+Weitere Informationen sind dort zu finden.
+
+% subsubsection Europäischer Absolutismus 1648--1789. Teil 2 (end)
+
+\subsubsection{Diaspora} % (fold)
+\label{ssub:Diaspora}
+
+\begin{description}
+  \item[Inhalt:] Was ist das überhaupt -- Diaspora? Und warum scheint der
+    Begriff Konjunktur zu haben? Was heißt es, wenn von „Opfer-Diaspora“,
+    „Arbeits-Diaspora“, „Handels-Diaspora“ oder „imperialer Diaspora“ gesprochen
+    wird? Was, wenn Diaspora als „diskontinuierlicher sozialer Raum“ (Jürgen
+    Osterhammel) oder als „Paradigma der globalisierten Welt“ (Ruth Mayer)
+    erscheint? Was schließlich, wenn Historikerinnen und Historiker Diaspora im
+    Rahmen von Konzepten wie „Kulturelles Gedächtnis“, „Erfundene Traditionen“,
+    „Black Atlantic“ oder „Hybridität“ in den Blick nehmen. Ausgehend von
+    Begriffsklärungen und Typologisierungsangeboten, versucht die Vorlesung,
+    diese und andere Fragen zu beantworten, indem sie ihren Gegenstand als
+    Chance versteht, Geschichte transnational, transkontinental und
+    transkulturell zu betreiben. 
+  \item[Literatur:] Robin Cohen, Global Diasporas. An Introduction, 1997
+\end{description}
+
+% subsubsection Diaspora (end)
+
+\subsubsection{Die Stadt der Moderne (16.-20. Jahrhundert)} % (fold)
+\label{ssub:Die Stadt der Moderne (16.--20. Jahrhundert)}
+
+\begin{description}
+  \item[Inhalt:] Die Vorlesung wird die Stadtentwicklung der Neuzeit
+    vergleichend untersuchen. Dabei sollen Idealstadtentwürfe der frühen Neuzeit
+    wie der Moderne besondere Berücksichtigung finden. Einleitend wird
+    theoretisch der Stadtbegriff erörtert. Danach folgen ausgewählte empirische
+    Fallbeispiele. Diese reichen vom 16. Jahrhundert bis in die Gegenwart. Der
+    Ablaufplan wird in StudIP bereitgestellt.
+\end{description}
+\textsf{\textbf{Literatur:}}
+\begin{itemize}\itemsep0pt
+  \item Albers, Gerd: Stadtplanung. Eine illustrierte Einführung. Darmstadt
+    2008.
+  \item Beier, Rosemarie (Hrsg.): Aufbau West Aufbau Ost. Berlin 1997.
+  \item Beneovolo, Leonardo: Geschichte der Architektur des 19. und 20.
+    Jahrhunderts. 3 Bände.  3. Auflage München 1994.
+  \item Düwel, Jörn: Baukunst voran. Architektur und Städtebau in der SBZ/DDR.
+    Berlin 1995.
+  \item Friedrichs, Jürgen: Stadtanalyse.  Soziale und räumliche Organisation
+    der Gesellschaft. 3. Auflage Opladen 1983.
+  \item Gerteis, Klaus: Die deutschen Städte in der frühen Neuzeit. Zur
+    Vorgeschichte der „bürgerlichen Welt“. Darmstadt 1986.
+  \item Mumford, Lewis: Die Stadt. Geschichte und Ausblick. München 1979 (dtv
+    Wissenschaft 4326).
+  \item Reulecke, Jürgen (Hg.): Die deutsche Stadt im Industriezeitalter.
+    Beiträge zur modernen deutschen Stadtgeschichte. 2. Auflage Wuppertal 1980.
+  \item Schilling, Heinz: Die Stadt in der frühen Neuzeit. München 1993
+    (Enzyklopädie deutscher Geschichte 24).
+\end{itemize}
+Eine ausführlichere Bibliografie wird in StudIP bereitgestellt.
+
+% subsubsection Die Stadt der Moderne (16.--20. Jahrhundert) (end)
+
+\subsubsection{Geschichte des deutschen Kommunismus (Teil 1: 1918--1945)}
+% (fold)
+\label{ssub:Geschichte des deutschen Kommunismus (Teil 1: 1918--1945)}
+
+\begin{description}
+  \item[Inhalt:] Der deutsche Kommunismus nach dem Ersten Weltkrieg
+    repräsentierte dreierlei: den radikalen Flügel der sozialen Bewegung, die
+    Partei, die sich dem sowjetischen Herrschafts- und Gesellschaftsmodell
+    verschrieben hatte und zuletzt die Trägerin einer Ideologie, die ein
+    absolutes Wahrheitsmonopol beanspruchte. Seine Entwicklung war zugleich
+    reich an Brüchen, Wendungen und inneren Widersprüchen. Erst mit der
+    „Stalinisierung“ der KPD seit Mitte der zwanziger Jahre trat eine äußerlich
+    sichtbare Homogenisierung ein, die zugleich die Partei zu einem
+    gesellschaftlichen Außenseiter-Dasein verurteilte, die jedoch wiederum
+    Abspaltungen und Richtungsstreitigkeiten verursachte. Nach 1933 veränderten
+    sich mit Verfolgung, Untergrund und Widerstand auf der einen sowie Exil auf
+    der anderen Seite Programme, Konzeptionen und Tätigkeitsfelder erneut. Diese
+    vielschichtige Entwicklung wird mit der Geschichte der KPD im Mittelpunkt
+    nachgezeichnet, die kommunistischen „Splitterparteien“ werden mit
+    einbezogen.
+\end{description}
+\textsf{\textbf{Literatur:}}
+\begin{itemize}\itemsep0pt
+  \item Gerd Koenen: Was war der Kommunismus? Göttingen 2010
+  \item Kommunistische Bewegung und realsozialistischer Staat. Beiträge zum
+    deutschen und internationalen Kommunismus von Hermann Weber. Ausgewählt,
+    herausgegeben und eingeleitet von Werner Müller, Köln 1988
+  \item Jerzy Holzer: Der Kommunismus in Europa. Poltische Bewegung und
+    Herrschaftssystem, Frankfurt am Main 1988
+\end{itemize}
+
+% subsubsection Geschichte des deutschen Kommunismus (Teil 1: 1918--1945) (end)
+
+% subsection Geschichte (end)
+
+\subsection{Theologie} % (fold)
+\label{sub:Theologie}
+
+\subsubsection{Einführung in die Geschichte des Christentums} % (fold)
+\label{ssub:Einführung in die Geschichte des Christentums}
+
+\begin{description}
+  \item[Inhalt:] Der Grundkurs, in dem sich Elemente der Vorlesung und des
+    Kolloquiums verbinden, richtet sich vor allem an Studierende für das Lehramt
+    im Grundstudium. Er bietet eine Einführung in das Studium der
+    Kirchengeschichte. Dies geschieht an ausgewählten Themenbereichen, in denen
+    sich das Spektrum der zweitausendjährigen Kirchengeschichte widerspiegelt.
+    In jeder Sitzung wird das jeweilige Thema anhand eines ausgewählten Textes
+    vertiefend behandelt.
+  \item[Literatur:] Zur Anschaffung wird empfohlen: B. Moeller, Geschichte des
+    Christentums in Grundzügen (UTB 905), Göttingen: Vandenhoeck \& Ruprecht, 8.
+    Aufl. 2004
+\end{description}
+
+% subsubsection Einführung in die Geschichte des Christentums (end)
+
+\subsubsection{Bibelkunde des Neuen Testaments} % (fold)
+\label{ssub:Bibelkunde des Neuen Testaments}
+
+\begin{description}
+  \item[Inhalt:] Die Übung bietet einen Überblick über den Aufbau der
+    neutestamentlichen Schriften sowie kurze Einführungen in deren
+    Entstehungssituation und theologisches Profil. Von den Teilnehmerinnen und
+    Teilnehmern wird erwartet, dass sie parallel zur Übung das Neue Testament
+    lesen und die jeweils zu behandelnden Schriften unter vorgegebenen
+    Fragestellungen durcharbeiten.
+  \item[Literatur:] K.-M. Bull, Bibelkunde des Neuen Testaments, 5. Aufl.,
+    Neukirchen-Vluyn 2006.
+\end{description}
+
+% subsubsection Bibelkunde des Neuen Testaments (end)
+
+\subsubsection{Geschichte der frühjüdischen Literatur} % (fold)
+\label{ssub:Geschichte der frühjüdischen Literatur}
+
+\begin{description}
+  \item[Inhalt:] Die Autoren der neutestamentlichen Schriften nehmen in
+    vielfältiger Weise auf die Diskurse des hellenistischen Judentums Bezug. Die
+    Vorlesung bietet einen Überblick über die jüdische Literatur aus der Zeit 2.
+    Jhd. v. Chr. bis 1. Jhd. n. Chr., um auf diese Weise einen ersten Zugang zu
+    dieser geistigen Welt zu ermöglichen.
+  \item[Literatur:] Jüdische Schriften aus hellenistisch-römischer Zeit (JSHRZ),
+    hg. v. W.G. Kümmel u.a., Gütersloh 1973ff (Übersetzungen)
+
+    Neues Testament und Antike Kultur (Hrsg. K. Erlemann u.a.), Band 1,
+    Abschnitt 1.3.2 (dort weitere Literatur)
+\end{description}
+
+% subsubsection Geschichte der frühjüdischen Literatur (end)
+
+% subsection Theologie (end)
+
+\subsection{Germanistik/Kommunikation} % (fold)
+\label{sub:Germanistik/Kommunikation}
+
+\subsubsection{„Mach mal den Flyer! Du hast das doch studiert!“
+Kommunikationswissenschaft zwischen Klischee und Wirklichkeit} % (fold)
+\label{ssub:„Mach mal den Flyer! Du hast das doch studiert!“
+Kommunikationswissenschaft zwischen Klischee und Wirklichkeit}
+
+\begin{description}
+  \item[Inhalt:] Fast allen Wissenschaften sind im fachfremden öffentlichen
+    Bewusstsein bestimmte klischeehafte Vorstellungen zugeordnet. Mathematiker
+    können gut rechnen, Informatiker programmieren Computer, Germanisten wollen
+    Deutschlehrer werden und Kommunikationswissenschaftler -- können gut
+    kommunizieren? sind gute Journalisten? oder perfekt für die
+    Marketingabteilung?
+
+    Welch weites interdisziplinäres Feld man betreten hat, als man beschloss,
+    „Kommunikationswissenschaft“ zu studieren, wird spätestens dann deutlich,
+    wenn man sich mit Kommunikationsstudenten aus unterschiedlichen
+    Universitäten über die Fachinhalte unterhält: Während sich etwa der eine mit
+    linguistischen und kommunikationspsychologischen Fragestellungen
+    auseinandersetzt, geht der andere z.\,B. publizistisch oder journalistisch
+    an seinen Studiengang.
+
+    Ausgehend von der Selbstverständnis-Erklärung der „Deutschen Gesellschaft
+    für Publizistik und Kommunikationswissenschaft“ sowie dem Bericht des
+    Wissenschaftsrates zum Stand der Medien- und Kommunikationswissenschaften in
+    Deutschland zeichnet dieses Seminar die historische Entwicklung der
+    verschiedenen kommunikationswissenschaftlichen Perspektiven im
+    deutschsprachigen Raum nach und bettet sie in einen internationalen Kontext
+    ein.
+
+    Ziel ist es, die verfolgten Perspektiven greifbarer zu machen,
+    interdisziplinäre Zusammenhänge bewusst zu machen und die faszinierende
+    Spannweite des Faches aufzuzeigen.
+\end{description}
+
+% subsubsection „Mach mal den Flyer! Du hast das doch studiert!“
+% Kommunikationswissenschaft zwischen Klischee und Wirklichkeit (end)
+
+\subsubsection{Sprache -- Medien -- Kommunikation: Von den Anfängen der
+deutschen Sprache zur Internet-Kommunikation} % (fold)
+\label{ssub:Sprache -- Medien -- Kommunikation: Von den Anfängen der deutschen
+Sprache zur Internet-Kommunikation}
+
+\begin{description}
+  \item[Inhalt:] Die Übung bietet einen Überblick über die historische
+    Entwicklung menschlicher Sprache und Kommunikation, mit besonderer
+    Berücksichtigung der Geschichte und Gegenwart der deutschen Sprache. Dabei
+    werden formale Merkmale immer in Beziehung gesetzt zu den medialen
+    Bedingungen der jeweiligen Zeit, da Sprache nie losgelöst von ihren Nutzern
+    (der „Sprachgemeinschaft“) und ihrem Zweck (nämlich Kommunikation zu
+    ermöglichen, um ein bestimmtes Ziel zu verfolgen) betrachtet werden sollte.
+
+    Die Veranstaltung kann als ergänzende Veranstaltung im
+    Germanistik-Grundstudium, im Fach „Sprachliche Kommunikation und
+    Kommunikationsstörungen“ (Modul J) sowie als IDS angerechnet werden.
+\end{description}
+
+% subsubsection Sprache -- Medien -- Kommunikation: Von den Anfängen der
+% deutschen Sprache zur Internet-Kommunikation (end)
+
+\subsubsection{Stationen deutscher Lyrik} % (fold)
+\label{ssub:Stationen deutscher Lyrik}
+
+\settowidth{\versewidth}{Wenn ihm Tau, hell wie Licht, aus der Locke träuft,}
+\poemtitle*{Die frühen Gräber}
+\begin{verse}[\versewidth]
+  Willkommen, o silberner Mond, \\
+  Schöner, stiller Gefährt der Nacht! \\
+  Du entfliehst? Eile nicht, bleib, Gedankenfreund! \\
+  Sehet, er bleibt, das Gewölk wallte nur hin. \\[1em]
+
+  Des Maies Erwachen ist nur \\
+  Schöner noch, wie die Sommernacht, \\
+  Wenn ihm Tau, hell wie Licht, aus der Locke träuft, \\
+  Und zu dem Hügel herauf rötlich er kömmt. \\[1em]
+
+  Ihr Edleren, ach es bewächst \\
+  Eure Male schon ernstes Moos! \\
+  O wie war glücklich ich, als ich noch mit euch \\
+  Sahe sich röten den Tag, schimmern die Nacht. \\
+\end{verse}
+\attrib{Friedrich Gottlieb Klopstock, 1764}
+
+\poemtitle*{Die frühen Gräber}
+%\settowidth{\versewidth}{Heulend reißt der Wolf den Rachen. Von Krumenhänden}
+\begin{verse}[\versewidth]
+  Hell strahlt eurer Glieder Asche, von Faltern \\
+  im Gebüsch umflügelt, von Gewittern \\
+  dampfgebügelt. Wortlos geht der Mund zur Flasche. \\[1em]
+
+  Heulend reißt der Wolf den Rachen. Von Krumenhänden \\
+  aufgehügelt, psalternd im Gespräch \\
+  beflügelt, heil strahlt eurer Glieder Asche.\\
+\end{verse}
+\attrib{Richard Pietraß, \textit{für Richard Leising und Karl Mickel}, 2000}
+
+\begin{description}
+  \item[Literatur:] Echtermeyer. Deutsche Gedichte. Von den Anfängen bis zur
+    Gegenwart. Auswahl für Schulen, hg. von Elisabeth K. Paefgen zusammen mit
+    Peter Geist, 19. Auflage, Berlin 2005.
+
+    Holznagel/Kemper/Korte/Mayer/Schnell/Sorg: Geschichte der deutschen Lyrik,
+    Stuttgart 2004.
+\end{description}
+
+% subsubsection Stationen deutscher Lyrik (end)
+
+% subsection Germanistik/Kommunikation (end)
+
+\subsection{Allgemeine Studien} % (fold)
+\label{sub:Allgemeine Studien}
+
+\subsubsection{Was Bilder (un)sichtbar macht} % (fold)
+\label{ssub:Was Bilder (un)sichtbar macht}
+
+Aus der Perspektive verschiedener Kultur- und Naturwissenschaften soll der Frage
+nachgegangen werden:
+\begin{enumerate}
+  \item Was Bilder sichtbar machen, in ihren Disziplinen und Kontexten. Zur
+    Orientierung ist dabei zu unterscheiden zwischen Bildern im Text (Metaphern
+    etc.), im Kopf (Vorstellungen, Imaginationen), an der Wand (materiell,
+    extern wie Gemälde) und auf dem Schirm (Computerbilder). Fraglich sind hier
+    vorrangig die letzteren beiden: also Bilder, die „auf die Augen gehen“.
+
+    Was Bilder sichtbar machen ist
+    \begin{enumerate}
+      \item auf der Ebene der in den Wissenschaften thematischen Phänomenen und
+        Vollzügen zu bedenken,
+      \item auf der Ebene der Thematisierung, also den wissenschaftlich
+        erzeugten oder verwendeten Bildern.
+    \end{enumerate}
+    Was macht z.\,B. ein Kruzifix (welches, wo, in welchem Gebrauch etc.?), eine
+    Hostie, ein Porträtfoto, ein mittelalterliches Tafelbild oder eine
+    Tomographie-Bild sichtbar?
+
+    Und was wird mit ihm sichtbar gemacht im wissenschaftlichen Kontext und
+    Gebrauch?
+  \item Die Reflexion und Bestimmung der so erzeugten Sichtbarkeit provoziert
+    die Gegenfrage, was in dieser Visibilisierung invisibilisiert wird: Was wird
+    dabei unsichtbar gemacht, warum und mit welchen Folgen? Unsichtbarmachung
+    ist mehrdeutig: was wird schlicht ausgeblendet, was wird ggf. verstellt oder
+    verzerrt, wovon wird abgelenkt in der Konzentration auf das Bild, und was
+    bleibt jenseits des Wahrnehmungshorizontes?
+
+    Mit der Auswahl, die ein Bild selber ist, wird bereits anderes unsichtbar
+    gelassen; mit seiner Auf- oder Darstellung wird anderes verstellt und nicht
+    exponiert; mit dem Gebrauch wird ausgewählt. Damit ist die „Rückseite“ des
+    Bildes und seines Gebrauchs das „Ausgeschlossene“, das Invisibilisierte.
+  \item Angesichts dessen, daß hier gebraucht, gemacht, ausgewählt und indirekt
+    inivisibilisiert wird, daß also selektiv mit der Ressource Aufmerksamkeit
+    und gezielter Sichtbarkeit umgegangen wird, ergeben sich Fragen nach Ethos
+    (vorwissenschaftlich) und Ethik (wissenschaftlich) dieser Praktiken.
+
+    Bildethik und -politik sind die Dimensionen, die eine entsprechend
+    aufmerksame Reflexion auf Bilder nicht nicht beachten kann. Am Horizont der
+    doppelten Leitfrage stehen daher Verantwortung oder Rechenschaft, jedenfalls
+    Reflexion auf diese ethischen Fragen.
+\end{enumerate}
+
+% subsubsection Was Bilder (un)sichtbar macht (end)
+
+\subsubsection{Leben-Licht-Materie} % (fold)
+\label{ssub:Leben-Licht-Materie}
+
+Wir leben in einer immer komplexer werdenden Welt. Neue Ideen und Technologien
+basieren einerseits auf einer hohen Spezialisierung und andererseits auf der
+engen Zusammenarbeit verschiedener Wissensgebiete. Bei der Rekonstruktion
+biologischer Funktionen, für den Einsatz innovativer Behandlungsmethoden mit
+Lasern, zur Entwicklung neuer Oberflächen, für die Erforschung neuer Methoden
+zur Energiegewinnung oder zur schadstoffarmen und energiesparenden
+Materialherstellung stehen Naturwissenschaftler, Ingenieure und Mediziner in
+einem interdisziplinären Dialog miteinander.
+
+Die Vorlesungsreihe gibt einen Einblick in die wichtigsten Forschungsgebiete des
+Departments „Life, Light and Matter“ und ist für Studierende aller Fakultäten
+geeignet.
+
+\begin{description}
+  \item[Weitere Informationen:] Department Science and Technology of Life, Light
+    and Matter
+
+    \url{http://www.physik.uni-rostock.de/cluster/llm.htm}
+\end{description}
+
+\textsf{\textbf{Vortragsliste:}}
+\LTXtable{\textwidth}{tbl-llmvortragsliste.tex}
+
+% subsubsection Leben-Licht-Materie (end)
+
+\subsubsection{Strukturen und Symmetrien} % (fold)
+\label{ssub:Strukturen und Symmetrien}
+
+\textsf{\textbf{Vortragsliste:}}
+\LTXtable{\textwidth}{tbl-susvortragsliste.tex}
+
+% subsubsection Strukturen und Symmetrien (end)
+
+\subsubsection{Spielend Lernen} % (fold)
+\label{ssub:Spielend Lernen}
+
+\begin{description}
+  \item[Zielstellung:] Die Fähigkeit zu lernen ist für den Menschen eine
+    Grundvoraussetzung des Lebens und der Anpassung an die Umwelt. Beim Lernen
+    können Erfahrungen und neu gewonnene Einsichten zum veränderten Verhalten,
+    Denken und Fühlen führen. Es gibt unterschiedliche Möglichkeiten zum Erwerb
+    von geistigen, körperlichen, sozialen Kenntnissen und Fertigkeiten. 
+
+    Forscher beschäftigen sich teilweise schon seit vielen Jahren mit dem weiten
+    Themenkreis des „spielbasierten Lernens“. Dazu gehören beispielsweise
+    Medienwissenschaftler, Pädagogen, Lernpsychologen, Sozialwissenschaftler und
+    in neuerer Zeit auch Informatiker.
+
+    Wie kann man Lernprozesse spielerisch gestalten und dabei moderne
+    Technologien nutzen? Welche Möglichkeiten für „elektronisches Lernen“
+    bieten die neuen digitalen Medien? Wie kann die Motivation des Lernenden
+    durch spielerische Elemente auf einem hohem Niveau gehalten werden? Wie
+    lassen sich spielerische und fesselnde Elemente sinnvoll in die Lehrinhalte
+    einbinden?
+\end{description}
+
+\textsf{\textbf{Vortragsliste:}}
+\LTXtable{\textwidth}{tbl-slvortragsliste.tex}
+
+% subsubsection Spielend Lernen (end)
+
+\subsubsection{„Erfolgreich Altern“} % (fold)
+\label{ssub:„Erfolgreich Altern“}
+
+\begin{description}
+  \item[Inhalt:] Steigende Lebenserwartung und niedrige Geburtenraten verändern
+    die Bevölkerungsstruktur tiefgreifend. Dieser demografische Wandel gilt als
+    eine der großen Herausforderungen der modernen Industriegesellschaft. Zu
+    seinen Konsequenzen zählen die Verlängerung der Lebensarbeitszeit, der
+    Anstieg der Pflegebedürftigkeit und Finanzierungsprobleme der Renten. Eine
+    Lebenserwartung von 90 Jahren und mehr stellt die bisherige Dreiteilung des
+    Lebenslaufes in die Phasen der Bildung, Erwerbstätigkeit und Freizeit nach
+    Renteneintritt in Frage.
+
+    Das zentrale Ziel der interdisziplinären Forschung ist es, die
+    Selbständigkeit und Selbst­bestimmtheit im Alter zu erhöhen. Im Verbund
+    forschen die Wissenschaftlerinnen und Wissen­schaftler nach neuen Lösungen
+    -- auf der Ebene der medizinischen Versorgungs- und Therapieformen, im
+    Bereich der sozialen Strukturen und in Bezug auf technische
+    Assistenz­systeme. Die Herausforderung besteht darin, die medizinischen, die
+    sozial- und geistes­wissen­schaftlichen, sowie die
+    ingenieurwissenschaftlichen Aspekte ganzheitlich zu untersuchen und in ihren
+    Wechselwirkungen zu verstehen.
+
+    Die Ringvorlesung gibt einen Überblick zu Ergebnissen und Erkenntnissen aus
+    den beteiligten Forschungsgebieten der Profillinie „Erfolgreich Altern“.
+\end{description}
+
+% subsubsection „Erfolgreich Altern“ (end)
+
+\subsubsection{Einführung in die Demographie I} % (fold)
+\label{ssub:Einführung in die Demographie I}
+
+\begin{description}
+  \item[Inhalt:] In der Vorlesung erfolgt die Einführung in die Grundbegriffe
+    der Demographie sowie die Vorstellung grundlegender Methodiken. Schwerpunkte
+    bilden die drei demographischen Prozesse: Fertilität, Mortalität und
+    Migration, ihre theoretischen Grundlagen und empirischen Messkonzepte.
+    Bevölkerungsprognosetechniken werden vorgestellt, die Anwendung
+    demographischer Modelle auf aktuelle gesellschaftspolitische Fragen
+    besprochen, sowie der Bezug zur deutschen Bevölkerungsstatistik hergestellt.
+\end{description}
+\textsf{\textbf{Literatur:}}
+\begin{itemize}\itemsep0pt
+  \item Preston, S.H., Heuveline, P., Guillot, M. (2001): Demography -Measuring
+    and Modeling Population Processes. Malden/USA: Blackwell Publishers Ltd.
+  \item Hinde, A. (1998): Demographic Methods. London: Arnolds Publishing.
+  \item Mueller, U., Nauck, B., Dieckmann, A. (2000): Handbuch der Demographie
+    1: Modelle und Methoden. Berlin: Springer.
+  \item Mueller, U., Nauck, B., Dieckmann, A. (2000): Handbuch der Demographie
+    2: Anwendungen. Berlin: Springer.
+\end{itemize}
+
+% subsubsection Einführung in die Demographie I (end)
+
+% subsection Allgemeine Studien (end)
+
+\subsection{Sozialpsychologie} % (fold)
+\label{sub:Sozialpsychologie}
+
+\subsubsection{Einführung in die Sozialpsychologie für Lehramtskandidaten}
+% (fold)
+\label{ssub:Einführung in die Sozialpsychologie für Lehramtskandidaten}
+
+\begin{description}
+  \item[Lehrziel:] Erwerb von grundlegendem Wissen zu sozialpsychologischen
+    Basiskonzepten
+\end{description}
+\textsf{\textbf{Inhalt:}}
+\begin{itemize}\itemsep0pt
+  \item Grundbegriffe: Gedächtnis, Lernen, Wert $\times$ Erwartungstheorien
+  \item Soziale Wahrnehmung (auch soz. Stereotype, implizite
+    Persönlichkeitstheorien, Urteilsfehler)
+  \item Konstruktion der sozialen Welt (Soziale Kognition; Urteilsbildung
+    und Entscheidungen; Attribution; Einstellungen; Einstellungserwerb und
+    Einstellungsänderung
+  \item Gruppen (Gruppenleistungen und Gruppenstrukturen; Gruppenleistungen,
+    Gruppenstrukturen (inkl. Status, Führungsverhalten)
+  \item Beziehungen und Emotionen (Interpersonale Kommunikation;
+    Zwischenmenschliche Anziehung; Prosoziales und hilfreiches Verhalten;
+    Aggression und Feindseligkeit)
+  \item Kommunikation (einfache Kommunikationsmodelle, Zusammenhang mit
+    Zufriedenheit
+  \item Beziehungsdreieck Eltern -- Schüler -- Lehrkräfte.
+\end{itemize}
+\textsf{\textbf{Literatur:}}
+\begin{itemize}\itemsep0pt
+  \item Zimbardo, P. G. (1999). Psychologie (7. neubearb. Aufl.). Berlin:
+    Springer (besonders Kapitel 15).
+  \item Stroebe, W., Hewstone, M. \& Stephenson, G. M. (Hrsg.). (1997).
+    Sozialpsychologie. Eine Einführung. (Dritte, erweiterte und überarb. Aufl.).
+    Berlin: Springer.
+\end{itemize}
+
+% subsubsection Einführung in die Sozialpsychologie für Lehramtskandidaten (end)
+
+\subsubsection{Einführung in die pädagogisch-psychologische Diagnostik für
+Lehramtskandidaten} % (fold)
+\label{ssub:Einführung in die pädagogisch-psychologische Diagnostik für
+Lehramtskandidaten}
+
+\textsf{\textbf{Inhalt:}}
+\begin{itemize}\itemsep0pt
+  \item Anliegen der differenziellen Psychologie und psychol. Diagnostik (inkl.
+    komplexes Schulleistungsmodell)
+  \item Diagnostische Qualitätsmerkmale
+  \item Intelligenz und Intelligenzmessung (beispielhaft mit Selbstversuch)
+  \item Verhaltensbeobachtung
+  \item Einschulungsdiagnostik
+  \item Urteilsfehler
+  \item Schriftliche Prüfungen aus psychol. Sicht
+  \item Mündliche Prüfungen (inkl. Angstmodell)
+  \item Bildungsforschung am Beispiel Pisa-Studie (Schwerpunkt auf
+    Forschungsmethodik, inkl. statistische Intuitionen, Anleitung zum Lesen der
+    PISA-Tabellen)
+\end{itemize}
+
+% subsubsection Einführung in die pädagogisch-psychologische Diagnostik für
+% Lehramtskandidaten (end)
+
+\textsf{\textbf{Methoden:}}
+\begin{itemize}\itemsep0pt
+  \item Klassische Vorlesung/Präsentation durch Dozenten;
+  \item Diskussion einzelner inhaltlicher Aspekte der Vorlesung (z.B. Bekämpfung
+    von Vorurteilen oder Sinn von Zensurengebung und verschiedener
+    Zensierungsmodelle), kleine Experimente;
+  \item praktische Erfahrungen (beispielsweise Intelligenztest-Selbstversuch mit
+    Auswertung, Bewertung von Aufsätzen von Grundschülern),
+  \item Kontrollfragen zu den Inhalten.
+\end{itemize}
+
+% subsection Sozialpsychologie (end)
+
+\subsection{Maschinenbau} % (fold)
+\label{sub:Maschinenbau}
+
+\subsubsection{Fertigungslehre I} % (fold)
+\label{ssub:Fertigungslehre I}
+
+\textsf{\textbf{Inhalt:}}
+\begin{enumerate}\itemsep0pt
+  \item Grundlagen der Fertigungstechnik
+  \item Werkstoffe
+  \item Qualität
+  \item Urformen
+  \item Umformen (Druckumformen, Zugdruckumformen)
+  \item Trennen (Zerteilen)
+  \item Spanen mit geometrisch bestimmten und unbestimmten Schneiden, Abtragen,
+    Beschichten
+  \item Fügen
+  \item Technisches Management
+  \item Recycling
+\end{enumerate}
+
+% subsubsection Fertigungslehre I (end)
+
+% subsection Maschinenbau (end)
+
+\subsection{Philosophie} % (fold)
+\label{sub:Philosophie}
+
+\subsubsection{Aristoteles und die abendländische Philosophie} % (fold)
+\label{ssub:Aristoteles und die abendländische Philosophie}
+
+\begin{description}
+  \item[Inhalt:] Aristoteles fungiert in der abendländischen
+    Philosophiegeschichte ebenso häufig als Autorität, auf die man sich stützt,
+    wie als Gegner, den es zu überwinden gilt. Das bedeutet, dass unser
+    Aristotelesbild rezeptionsgeschichtlich meist nicht sine ira et studio
+    gewonnen wird. Die Vorlesung versucht, direkt zu Aristoteles selbst
+    vorzustoßen und anhand ausgewählter Texte aus seinem Werk einen Überblick
+    über alle Bereiche der aristotelischen Philosophie (Ethik, Politik, Logik,
+    Naturphilosophie, Metaphysik) zu geben. Dabei bleibt aber die
+    Rezeptionsgeschichte in Spätantike, Mittelalter und Neuzeit nicht
+    unberücksichtigt. Griechischkenntnisse werden wie gewohnt nicht
+    vorausgesetzt.
+  \item[Literaturempfehlung:] Christian Mueller-Goldingen, Aristoteles -- Eine
+    Einführung in sein philosophisches Werk, Hildesheim 2003
+\end{description}
+
+% subsubsection Aristoteles und die abendländische Philosophie (end)
+
+% subsection Philosophie (end)
+
+\subsection{Wirtschaftswissenschaften} % (fold)
+\label{sub:Wirtschaftswissenschaften}
+
+\subsubsection{Einführung in die Volkswirtschaftslehre} % (fold)
+\label{ssub:Einführung in die Volkswirtschaftslehre}
+
+\begin{description}
+  \item[Inhalt:] Volkswirte haben eine spezielle Art, die Welt zu betrachten,
+    und in dieser Vorlesung soll ein Einblick in diese Denkweise gegeben werden.
+    Insbesondere geht es dabei um die Wirkungen von (nicht nur) ökonomischen
+    Anreizen auf menschliches Verhalten sowie um die Rolle von Preisen und
+    Märkten. Hier werden zunächst Grundbegriffe volkswirtschaftlicher
+    Theoriebildung vermittelt, die dann in den späteren Semestern des Studiums
+    vertieft und systematisch erarbeitet werden. Darüber hinaus geht es um Ziele
+    und Wirkungen von Wirtschaftspolitik sowie um die institutionellen
+    Rahmenbedingungen, unter denen Wirtschaft abläuft: die Wirtschafts- und
+    Sozialordnung der Bundesrepublik Deutschland.
+\end{description}
+
+% subsubsection Einführung in die Volkswirtschaftslehre (end)
+
+% subsection Wirtschaftswissenschaften (end)
+
+% section Kommentare (end)
+
+\end{document}
